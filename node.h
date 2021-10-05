@@ -40,15 +40,31 @@ public:
    // Construct
    //
 
+	/*Node.default-constructor()
+ data -> T()
+ pNext -> NULL
+ pPrev -> NULL*/
    Node() 
    { 
       pNext = pPrev = this;
    }
+
+   /*Node.copy-constructor(t)
+ data -> t
+ pNext -> NULL
+ pPrev -> NULL*/
    Node(const T& data) 
    {
       pNext = pPrev = this;
    }
 
+   /*copy(pSource)
+ pDestination -> new Node(pSource.data)
+ pSrc -> pSource
+ pDes -> pDestination
+ FOR pSrc -> pSrc.pNext … end of the list
+ pDes -> insert(pSrc.data, pDes, true)
+ RETURN pDestination*/
    Node(T&& data) 
    {
       pNext = pPrev = this;
@@ -162,6 +178,7 @@ inline size_t size(const Node <T> * pHead)
 template <class T>
 inline std::ostream & operator << (std::ostream & out, const Node <T> * pHead)
 {
+
    return out;
 }
 

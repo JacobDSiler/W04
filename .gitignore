@@ -2,3 +2,11 @@
 *.sln
 *.vcxproj
 *.filters
+.vs/LabLinkedList/v15/Browse.VC.db
+.vs/LabLinkedList/v15/Browse.VC.opendb
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/W04/v16/Browse.VC.db
+.vs/W04/v16/ipch/AutoPCH/23830049791ddc58/TESTNODE.ipch
+.vs/W04/v16/ipch/AutoPCH/e98e89c2ede8316d/NODE.ipch
