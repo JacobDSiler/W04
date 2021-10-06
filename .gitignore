@@ -10,3 +10,5 @@
 .vs/W04/v16/Browse.VC.db
 .vs/W04/v16/ipch/AutoPCH/23830049791ddc58/TESTNODE.ipch
 .vs/W04/v16/ipch/AutoPCH/e98e89c2ede8316d/NODE.ipch
+*.ipch
+*.db
