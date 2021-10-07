@@ -60,9 +60,9 @@ public:
  pPrev -> NULL*/
    Node(const T& data) 
    {
-		this->data=data;
-		this->pNext=NULL;
-		this->pPrev=NULL;
+		this->data = data;
+		this->pNext = NULL;
+		this->pPrev = NULL;
 		//pNext = pPrev = this;
    }
 
@@ -72,7 +72,7 @@ public:
  pDes -> pDestination
  FOR pSrc -> pSrc.pNext … end of the list
  pDes -> insert(pSrc.data, pDes, true)
- RETURN pDestination*/
+ return pDestination*/
    Node(T&& data) 
    {
 	   this->data = data;
@@ -101,6 +101,7 @@ public:
 template <class T>
 inline Node <T> * copy(const Node <T> * pSource) 
 {
+
    return new Node<T>;
 }
 
@@ -143,7 +144,42 @@ WHILE pSrc ≠ NULL AND pDest ≠ NULL
 template <class T>
 inline void assign(Node <T> * & pDestination, const Node <T> * pSource)
 {
-   
+		//Step I :
+	const Node <T>* pSrc=pSource;
+	const Node <T>* pDest=pDestination;
+	while(pSrc != NULL && pDest != NULL)
+	{
+		pDest.data=pSrc.data;
+		pDest=pDest.pNext;
+		pSrc=pSrc.pNext;
+	}
+
+		//Step II :
+	if (pSrc != NULL)
+	{
+		pDest->pDesPrevious;
+			while (pSrc != NULL)
+			{
+				pDest.insert(pDest, pSrc.data, true);
+					if (pDestination = NULL)
+						pDestination->pDest;
+			}
+	}
+
+
+		//Step III :
+	bool setToNull;
+	if (pSrc != NULL)
+		setToNull=false;
+	if (pDest.pRev != NULL)
+		pDest.pPrev.pNext=NULL;
+	else
+	{
+		setToNull=true;
+		freeData(pDest);
+	}
+	if (setToNull)
+		pDestination=NULL;
 }
 
 /***********************************************
@@ -166,7 +202,7 @@ inline void swap(Node <T>* &pLHS, Node <T>* &pRHS)
  **********************************************/
 /*remove(pRemove)
  IF NULL = pRemove
- RETURN
+ return
  IF pRemove.pPrev
  pRemove.pPrev.pNext -> pRemove.pNext
  IF pRemove.pNext
@@ -176,12 +212,23 @@ inline void swap(Node <T>* &pLHS, Node <T>* &pRHS)
  ELSE
  pReturn -> pRemove.pNext
  DELETE pRemove
- RETURN pReturn*/
+ return pReturn*/
 template <class T>
 inline Node <T> * remove(const Node <T> * pRemove) 
 {
-   
-   return new Node<T>;
+	Node <T>* pReturn = new Node <T>();
+	if (pRemove = NULL)
+		return NULL;
+	if (pRemove.pPrev)
+		pRemove.pPrev.pNext->pRemove.pNext;
+	if (pRemove.pNext)
+		pRemove.pNext.pPrev->pRemove.pPrev;
+	if (pRemove.pPrev)
+		pReturn->pRemove.pPrev;
+	else
+		pReturn->pRemove.pNext;
+		delete pRemove;
+	return pReturn;
 }
 
 
@@ -207,14 +254,25 @@ inline Node <T> * remove(const Node <T> * pRemove)
  pNew.pPrev.pNext -> pNew
  IF pCurrent ≠ NULL and after = true
  … something similar …
- RETURN pNew
+ return pNew
 */
 template <class T>
 inline Node <T> * insert(Node <T> * pCurrent,
                   const T & t,
                   bool after = false)
 {
-   return new Node<T>();
+	Node <T>* pNew = new Node<T>();
+	if (pCurrent != NULL && after = false)
+	{
+		pNew.pNext->pCurrent;
+		pNew.pPrev->pCurrent.pPrev;
+		pCurrent.pPrev->pNew;
+	}
+	if (pNew.pPrev)
+		pNew.pPrev.pNext->pNew;
+	if (pCurrent != NULL && after = true)
+		pNew.pNext->pNew;
+   return pNew;
 }
 
 /******************************************************
@@ -230,13 +288,13 @@ inline Node <T> * insert(Node <T> * pCurrent,
  s -> 0
  FOR p ->pHead … end of the list
  s -> s + 1
- RETURN s
+ return s
 */
 template <class T>
 inline size_t size(const Node <T> * pHead)
 {
-	s = 0;
-	for (Node <int> * p = pHead; p; p = p->pNext)
+	int s = 0;
+	for (Node <T> * p = pHead; p; p = p->pNext)
 		s++;
    return s;
 }
@@ -252,7 +310,8 @@ inline size_t size(const Node <T> * pHead)
 template <class T>
 inline std::ostream & operator << (std::ostream & out, const Node <T> * pHead)
 {
-
+	for (Node <T>* p = pHead; p; p = p->pNext)
+		std::cout << p->data;
    return out;
 }
 
@@ -269,9 +328,15 @@ inline std::ostream & operator << (std::ostream & out, const Node <T> * pHead)
  pHead -> pHead.pNext
  DELETE pDelete*/
 template <class T>
-inline void clear(Node <T> * & pHead)
+inline void clear(Node <T>*& pHead)
 {
-   
+	Node <T>* pDelete;
+	while(pHead != NULL)
+	{
+		pDelete->pHead;
+		pHead->pHead.pNext;
+		delete pDelete;
+	}
 }
 
 
