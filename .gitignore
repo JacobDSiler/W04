@@ -12,3 +12,6 @@
 .vs/W04/v16/ipch/AutoPCH/e98e89c2ede8316d/NODE.ipch
 *.ipch
 *.db
+.vs/W04/v16/Browse.VC.db-shm
+.vs/W04/v16/Browse.VC.db-wal
+.vs/W04/v16/Browse.VC.opendb
