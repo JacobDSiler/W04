@@ -16,6 +16,7 @@
 
 #include <cassert>
 #include <memory>
+#include "node.h"
 
 class TestNode : public UnitTest
 {
@@ -25,7 +26,7 @@ public:
       reset();
 
       // Construct
-      /*test_create_default();
+      test_create_default();
       test_create_value();
       test_copy_nullptr();
       test_copy_one();
@@ -64,7 +65,7 @@ public:
       // Status
       test_size_empty();
       test_size_standard();
-      test_size_standardMiddle();*/
+      test_size_standardMiddle();
       
       report("Node");
    }
